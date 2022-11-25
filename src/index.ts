@@ -3,7 +3,7 @@ import * as web3 from "@solana/web3.js";
 import * as splToken from "@solana/spl-token";
 
 const PROGRAM_ID = new web3.PublicKey(
-    "Adcc1ie9nkNqRNuyauY1pycaFJ1deV88RZ5VZ9LNRocz"
+    "AjH8jYtcEJQkH4EASaVTD6CooafSbkNXjyRUwzhz2ymu"
 );
 
 async function initializeProgramTokenMint(
