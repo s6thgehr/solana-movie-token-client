@@ -58,7 +58,8 @@ async function initializeProgramTokenMint(
             },
         ],
         programId: PROGRAM_ID,
-        data: Buffer.from([3]),
+        // Our program does not use instruction data, it sets decimals to 9
+        // data: Buffer.from([3]),
     });
 
     tx.add(ix);
