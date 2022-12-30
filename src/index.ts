@@ -3,7 +3,7 @@ import * as web3 from "@solana/web3.js";
 import * as splToken from "@solana/spl-token";
 
 const PROGRAM_ID = new web3.PublicKey(
-    "AjH8jYtcEJQkH4EASaVTD6CooafSbkNXjyRUwzhz2ymu"
+    "EqwyBUMYnWiKBFu1egCBd6cGzjJNwq8AQdGVdSMoXVze"
 );
 
 async function initializeProgramTokenMint(
@@ -21,7 +21,7 @@ async function initializeProgramTokenMint(
     );
 
     // I think this line is useless
-    splToken.createInitializeMintInstruction;
+    // splToken.createInitializeMintInstruction;
 
     const tx = new web3.Transaction();
     const ix = new web3.TransactionInstruction({
@@ -58,8 +58,7 @@ async function initializeProgramTokenMint(
             },
         ],
         programId: PROGRAM_ID,
-        // Our program does not use instruction data, it sets decimals to 9
-        // data: Buffer.from([3]),
+        data: Buffer.from([3]),
     });
 
     tx.add(ix);
@@ -67,7 +66,7 @@ async function initializeProgramTokenMint(
 }
 
 async function main() {
-    const connection = new web3.Connection("http://localhost:8899"); //web3.clusterApiUrl("devnet"))
+    const connection = new web3.Connection("http://127.0.0.1:8899"); //web3.clusterApiUrl("devnet"))
     const signer = await initializeKeypair(connection);
 
     const txid = await initializeProgramTokenMint(
