@@ -20,7 +20,9 @@ async function initializeProgramTokenMint(
         PROGRAM_ID
     );
 
+    // I think this line is useless
     splToken.createInitializeMintInstruction;
+
     const tx = new web3.Transaction();
     const ix = new web3.TransactionInstruction({
         keys: [
